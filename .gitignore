@@ -5,3 +5,5 @@
 /dist
 /docs
 npm-debug.log
+.gobble
+.gobble-build
