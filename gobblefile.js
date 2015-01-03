@@ -3,12 +3,13 @@ var gobble = require( 'gobble' ),
 	lib,
 	tests;
 
-// TODO add license banner
 lib = gobble( 'lib' ).transform( 'esperanto-bundle', {
 	entry: 'rsvp',
 	type: 'umd',
 	name: 'RSVP',
-	strict: true
+	strict: true,
+	banner: require( 'fs' ).readFileSync( './config/versionTemplate.txt' )
+		.toString().replace( /VERSION_PLACEHOLDER_STRING/, version() ) + '\n'
 });
 
 tests = gobble([
